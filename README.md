@@ -7,7 +7,7 @@ Example 1
         "iOS" : 27
         "Other" : 2
 ```
-
+---
 Example 2
 ```mermaid
     flowchart TD
@@ -21,7 +21,7 @@ Example 2
         D --> |Yes| I[Print FizzBuzz]
         D --> |No| J[Print Actual Number]
 ```
-
+---
 Example 3
 ```mermaid
     flowchart TD
@@ -32,4 +32,27 @@ Example 3
     E --> |Yes - Request payment| F[Payment System]
     E --> |No - Inform customer| B[Cashier]
     F --> |Take payment from customer| A[Customer]
+```
+---
+Example 4 (AEC Task 1)
+```mermaid
+    flowchart TD
+    A[Product owner] -->|Logs in| B[Authentication System]
+    B --> |Checks credentials| C{Are the credentials valid?}
+    C -->|No| A[Product Owner]
+    C -->|Yes| D[Front-End System]
+    D --> E{Are you Product Owner?}
+    E -->|Yes| F[Build Task Columns & Add configuration settings]
+    E -->|No| G[Add task to board]
+    F -->|Invite team members to board| B[Authentication System]
+    G -->|Send task to database| H[Database]
+    H -->|Selects task| I{Did the user make a change to the task?}
+    I -->|Yes - Update database| H[Database]
+    I -->|No - Assign team member to task| J[Member Assigned]
+    J --> K{Has tasks status changed?}
+    K -->|Yes| L[Status Updated]
+    K -->|No| M[Status remains the same]
+    L -->|Start the task| N{Is the task complete?}
+    N -->|Yes - Update database| H[Database]
+    N -->|No - Alert Product Owner| O[Send email to Product Owner]
 ```
