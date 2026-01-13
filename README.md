@@ -24,7 +24,7 @@ Example 2
 ---
 Example 3
 ```mermaid
-    flowchart TD
+    flowchart LR
     A[Customer] -->|Orders coffee| B[Cashier]
     B --> |Inputs Order| C[Order System]
     C -->|Check if in stock| D[Stock System]
@@ -36,7 +36,7 @@ Example 3
 ---
 Example 4 (AEC Task 1)
 ```mermaid
-    flowchart TD
+    flowchart LR
     A[Product owner] -->|Logs in| B[Authentication System]
     B --> |Checks credentials| C{Are the credentials valid?}
     C -->|No| A[Product Owner]
